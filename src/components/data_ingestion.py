@@ -1,9 +1,13 @@
 import os
 import sys
+print(sys.path)
 from src.exception import CustomException
-sys.path.insert(0, './src')
 from src.logger import logging
 import pandas as pd
+
+# Add the project's root directory to the Python path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.append(project_root)
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
