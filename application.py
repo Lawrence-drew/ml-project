@@ -4,18 +4,15 @@ Created on Fri Feb 17 09:20:54 2023
 
 @author: nilay
 """
-import sys
-from src.exception import CustomException
-from src.logger import logging
+
 
 from flask import  Flask, render_template,request
-import numpy as np
-import pickle
+from flask import Flask, render_template, request
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 application=Flask(__name__)
 app=application
-#route
 
+#route
 @app.route('/')
 def index_page():
     return render_template('index.html')
@@ -38,12 +35,9 @@ def predict_price():
 
 
 
-if __name__=="__main__":
-    app.run(host='0.0.0.0',port=8080)
-    # try:
-    #   app.run(debug=True)
-    # except Exception as e:
-    #         raise CustomException(e,sys)
+if __name__ =='__main__':
+    #app.run(debug=True)
+    app.run(host='0.0.0.0' ,port=8080)
     
 
 
