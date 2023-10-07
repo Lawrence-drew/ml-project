@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -29,8 +29,8 @@ class DataTransformation:
         '''
         logging.info("Entered the data transormation component")
         try:
-            numerical_columns = ['Year', 'Present_Price', 'Kms_Driven', 'Owner']#list(df.select_dtypes(include='object').columns)
-            categorical_columns = [ 'Fuel_Type', 'Seller_Type', 'Transmission']
+            numerical_columns = ['Year', 'Present_Price', 'Kms_Driven',]#list(df.select_dtypes(include='object').columns)
+            categorical_columns = ['Fuel_Type', 'Transmission']
 
             num_pipeline= Pipeline(
                 steps=[
